@@ -3,13 +3,18 @@ close all
 u = netFT_openConnection;
 %% parameters
 numIterations = 100;
-%% loop
+numOffsetSamples = 20;
+%% start streaming
 netFT_startStreaming(u);
+%% offset
+offset = netFT_getOffset(u, numOffsetSamples);
+%% loop
 for i = 1:numIterations
-    ftdata = netFT_getFreshData(u, 0);
+    ftdata = netFT_getFreshData(u, offset);
     display(ftdata);    
 end
 netFT_stopStreaming(u);
-% close the connection%% tidy upfclose(u);
+%% tidy up
+fclose(u);
 delete(u);
 clear u
