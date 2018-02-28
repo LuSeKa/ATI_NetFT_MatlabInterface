@@ -1,8 +1,9 @@
-close all
+% Test script for NetFT sensor connnctivity
+
 %% udp port
 u = netFT_openConnection;
 %% parameters
-numIterations = 100;
+numIterations = 500;
 numOffsetSamples = 20;
 %% start streaming
 netFT_startStreaming(u);
