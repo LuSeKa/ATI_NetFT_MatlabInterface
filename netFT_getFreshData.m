@@ -4,6 +4,6 @@ function [ ftdata ] = netFT_getFreshData( u, ft_offset )
 
 flushinput(u)
 data = fscanf(u);
-ftdata = ftDataConversion(data)-ft_offset;
+ftdata = netFT_DataConversion(data)-ft_offset;
 end
 
