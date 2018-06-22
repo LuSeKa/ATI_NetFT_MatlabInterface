@@ -3,7 +3,7 @@
 %% udp port
 u = netFT_openConnection;
 %% parameters
-numIterations = 500;
+numIterations = 1000;
 numOffsetSamples = 20;
 %% start streaming
 netFT_startStreaming(u);
