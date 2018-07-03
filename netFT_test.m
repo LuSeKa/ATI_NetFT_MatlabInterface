@@ -9,12 +9,19 @@ numOffsetSamples = 20;
 netFT_startStreaming(u);
 %% offset
 offset = netFT_getOffset(u, numOffsetSamples);
+
+result=zeros(numIterations,6);
 %% loop
 for i = 1:numIterations
     ftdata = netFT_getFreshData(u, offset);
-    display(ftdata);    
+    display(ftdata);
+    result(i,:)=ftdata;
 end
+
 netFT_stopStreaming(u);
+%% plot data
+plot(result(:,:));
+
 %% tidy up
 fclose(u);
 delete(u);
