@@ -4,6 +4,7 @@ function [ u ] = netFT_openConnection(  )
 netFT = '192.168.1.1';
 port = 49152;
 u = udp(netFT,port);
+u = InputBufferSize = 8192;
 fopen(u);
 end
 
