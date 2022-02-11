@@ -3,6 +3,8 @@ function [  ] = netFT_stopStreaming( u )
 
 stopRequest = ['12';'34';'00';'00';'00';'00';'00';'00'];
 stopCommand = hexlistToString(stopRequest);
-fwrite(u, stopCommand) % send message to stop rdt streaming
-end
+netFT = "192.168.1.1";
+port = 49152;
+write(u, stopCommand, "string", netFT, port) % send message to stop rdt streaming
 
+end
