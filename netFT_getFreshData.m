@@ -5,7 +5,7 @@ function [ ftdata ] = netFT_getFreshData( u, ft_offset )
 % 13:16 = Fx            / 17:20 = Fy            / 21:24 = Fz
 % 25:28 = Tx            / 29:32 = Ty            / 33:36 = Tz
 
-flush(u, "input")
+flush(u, "output")
 data = read(u, 36);
 ftdata = netFT_DataConversion(data) - ft_offset;
 
